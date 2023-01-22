@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplicationMultiImages.Models.tblproduct>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Photo</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach( var d in Model)
+                {
+                    <tr>
+                        <th>@d.productId</th>
+                        <th>@d.productName</th>
+                        <td>
+                            @{
+                    string[] data = System.Text.RegularExpressions.Regex.Split(d.productPhoto,",");
+                    foreach (string s in data)
+                    {
+                        <img src="~/Image/@d.productName/@s" height="100"width="100" />
+                    }
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
