@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MVCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="rno" />
+    </Key>
+    <Property Name="rno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="english" Type="Int32" />
+    <Property Name="math" Type="Int32" />
+    <Property Name="science" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MVCDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Students" EntityType="Self.Student" />
+  </EntityContainer>
+</Schema>

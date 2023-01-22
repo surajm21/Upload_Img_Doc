@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    
+    <div>
+        <table border="1">
+            <thead>
+                <tbody>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>english</th>
+                    <th>math</th>
+                    <th>science</th>
+                    <th>total</th>
+                    <th>percentage</th>
+                    <th>result</th>
+
+
+
+
+                    @{ int ts = 0, tp = 0, tf = 0;}
+
+                    @foreach (var d in Model)
+                    {
+                        float t = (float)d.english + d.math + d.science;
+                        float p = t / 3;
+                        var r = "";
+                        if (p > 35)
+                        {
+                            tp++;
+                            r = "pass";
+                        }
+                        else
+                        {
+                            tf++;
+                            r = "Fail";
+
+                        }
+                        ts = tp + tf;
+
+
+                    <tr>
+                        <td>@d.rno </td>
+                        <td>@d.name </td>
+                        <td>@d.english </td>
+                        <td>@d.math </td>
+                        <td>@d.science </td>
+                        <td>@t </td>
+                        <td>@p </td>
+                        <td>@r </td>
+
+
+
+
+
+                    </tr>
+                    }
+                    </tbody>
+            </table>
+           
+           
+        </div>
+</body>
+</html>
