@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication6.Models.tblUser>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>User Name</th>
+                    <th>User Photo</th>
+                    <th>Document</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach( var d in Model)
+                {
+                    <tr>
+                        <td>@d.UserId</td>
+                        <td>@d.UserName</td>
+                        <td><img src="~/photos/@d.UserPhoto"style="height:100px;width:100px"/></td>
+                        <td><a href="~/document/@d.Document"/>@d.Document</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model WebApplication6.Models.tblUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div> 
+        <form action ="/User/Create" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>User Id</th>
+                <th>@Html.TextBoxFor(e=>e.UserId)</th>
+            </tr>
+            <tr>
+                <th>User Name</th>
+                <th>@Html.TextBoxFor(e=>e.UserName)</th>
+            </tr>
+            <tr>
+                <th>User Photo</th>
+                <th><input type="file" name="photo"/></th>
+            </tr>
+            <tr>
+                <th>Document</th>
+                <th><input type="file" name="document"/></th>
+            </tr>
+            <tr>
+                <th><input type = "submit" value="submit"/></th>
+            </tr>
+        </table>
+            </form>
+    </div>
+</body>
+</html>
